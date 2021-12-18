@@ -1,0 +1,42 @@
+<div class="card mt-3">
+  <div class="card-header">Registrate</div>
+  <div class="card-body">
+    <!-- [formGroup]="forma" -->
+    <form class="mt-3" [formGroup]="contacto">
+
+      <div class="input-group mb-3">
+        <input type="text" class="form-control w-100" placeholder="Nombre" aria-label="nombre"
+          aria-describedby="nombre">
+        <span class="" id="nombre"></span>
+      </div>
+
+      <div class="input-group mb-3">
+        <input type="text" class="form-control w-100" placeholder="Apellidos" aria-label="apellidos"
+          aria-describedby="apellidos">
+        <span class="" id="apellidos"></span>
+      </div>
+
+      <div class="input-group mb-3">
+        <input type="email" class="form-control w-100" placeholder="Email" aria-label="email" aria-describedby="email">
+        <span class="" id="email"></span>
+      </div>
+
+      <div class="input-group mb-3">
+        <input type="password" class="form-control w-100" placeholder="Contraseña" aria-label="password"
+          aria-describedby="password">
+        <span class="" id="password"></span>
+      </div>
+
+      <div class="input-group mb-3">
+        <input type="password" class="form-control w-100" placeholder="Repetir contraseña" aria-label="password"
+          aria-describedby="rePassword">
+        <span class="" id="rePassword"></span>
+      </div>
+
+      <div class="col-12">
+        <button class="btn btn-primary" type="submit">Registrarse</button>
+      </div>
+
+    </form>
+  </div>
+</div>

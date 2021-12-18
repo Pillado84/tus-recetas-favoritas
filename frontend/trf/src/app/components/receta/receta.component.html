@@ -1,0 +1,28 @@
+<div class="card" style="width: 18rem;" >
+  <img src="../../../assets/logos/receta.gif" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{receta.receta | slice:0:22}}</h5>
+    <h6 class="card-title">
+      <span [style]="'background-color: var(' + receta.color + ')'" class="badge">{{receta.tipo}}</span>
+    </h6>
+    <p class="card-text">
+      {{receta.descripcion}}
+    </p>
+    <app-alert [mensaje]="mensaje" *ngIf="descripcionIsNull()"></app-alert>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">{{receta.usuario}}</li>
+    <li class="list-group-item">
+      <div *ngIf="receta.media == 0">
+        -
+      </div>
+      <div *ngIf="receta.media > 0">
+        {{receta.media | number: '1.1-1'}}
+      </div>
+    </li>
+    <li class="list-group-item">{{receta.fechaCreacion}}</li>
+  </ul>
+  <div class="card-body">
+    <a class="btn btn-outline-primary" (click)="search(receta.idReceta)">Ver más...</a>
+  </div>
+</div>

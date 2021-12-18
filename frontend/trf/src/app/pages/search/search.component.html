@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="alert alert-info mt-3" role="alert" *ngIf="numero == undefined">
+      Buscando {{termino}}...
+    </div>
+    
+    <app-alert [mensaje]="mensaje" *ngIf="numero == 0"></app-alert>
+
+    <div class="col mt-3" *ngFor="let receta of recetas.items; let i = index">
+      <app-receta [receta]="receta"></app-receta>
+    </div>
+  </div>
+</div>

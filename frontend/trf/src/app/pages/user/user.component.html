@@ -1,0 +1,20 @@
+<div class="alinear mt-3">
+  <nav class="" id="menuizquierda">
+    <div class="encabezado">
+      <h3>Configuración</h3>
+    </div>
+    <ul class="list-unstyled">
+      <li (click)="menuVertical('p')">Perfil de usuario</li>
+      <li (click)="menuVertical('i')">Datos personales</li>
+      <li (click)="menuVertical('s')">Cambiar contraseña</li>
+      <li (click)="menuVertical('b')">Blog de recetas</li>
+      <li (click)="logout()">Cerrar sesion</li>
+    </ul>
+  </nav>
+  <div class="container">
+    <app-profile *ngIf="profile"></app-profile>
+    <app-information *ngIf="information"></app-information>
+    <app-password *ngIf="password"></app-password>
+    <app-blog *ngIf="blog"></app-blog>
+  </div>
+</div>

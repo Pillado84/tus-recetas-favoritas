@@ -1,0 +1,7 @@
+<div class="container">
+  <div class="row">
+    <div class="col mt-3" *ngFor="let receta of recetas.items; let i = index">
+      <app-receta [receta]="receta"></app-receta>
+    </div>
+  </div>
+</div>

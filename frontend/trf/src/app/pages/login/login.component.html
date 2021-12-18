@@ -1,0 +1,37 @@
+<div class="card mt-3">
+  <div class="card-header">Inicia sesión</div>
+  <div class="card-body">
+    <form [formGroup]="contacto">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp"
+          #email>
+        <div class="invalid-feedback" *ngIf="submitted && f.email.errors">
+          <div *ngIf="f.email.errors.required">El email es obligatorio</div>
+          <div *ngIf="f.email.errors.email">Por favor, ingresa tu Email</div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+        <div class="invalid-feedback" *ngIf="submitted && f.password.errors">
+          <div *ngIf="f.password.errors.required">Por favor, ingresa tu contraseña</div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <span>¿Olvidaste la contraseña? o Registrate aqui</span>
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Aceptar condiciones de uso</label>
+      </div>
+      <button class="btn btn-primary" (click)="login()">Entrar</button>
+    </form>
+  </div>
+</div>
+
+
+
+<!-- Cifrado MD5 -->
+<!-- https://www.youtube.com/watch?v=Qo6emu6-n-Q&ab_channel=TecnoAdictos -->
+<!-- min: 9:23 -->

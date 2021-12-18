@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col">
+    <h1 *ngIf="tabla">Listado de recetas</h1>
+    <h1 *ngIf="new">Crear una receta</h1>
+    <hr>
+    <button class="btn btn-primary mb-2 float-end" *ngIf="tabla" (click)="nueva('n')">Nueva</button>
+    <table class="table table-hover" *ngIf="tabla">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">Imagen</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Descripción</th>
+          <th scope="col">Valoración</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let receta of recetas['items']" class="cursor-pointer" (click)="search(receta.idReceta)">
+          <td>
+            <img class="img-fluid" src="../../../assets/logos/receta.gif" alt="">
+          </td>
+          <td>{{receta.receta}}</td>
+          <td>{{receta.descripcion}}</td>
+          <td> - </td>
+        </tr>
+      </tbody>
+    </table>
+    <app-new-recipe *ngIf="new"></app-new-recipe>
+  </div>
+</div>

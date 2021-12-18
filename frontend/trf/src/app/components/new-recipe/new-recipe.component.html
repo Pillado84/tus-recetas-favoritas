@@ -1,0 +1,86 @@
+<form autocomplete="off" [formGroup]="forma" (ngSubmit)="guardar()">
+  <div>
+    <span class="btn btn-primary btn-file">
+      Subir archivo <input type="file">
+    </span>
+    <div class="form-group row mt-3">
+      <div class="col">
+        <input class="form-control" type="text" placeholder="Nombre de la receta" formControlName="nombre"
+          [class.is-invalid]="nombreNoValido">
+        <small *ngIf="nombreNoValido" class="text-danger">
+          Ingrese 5 letras
+        </small>
+      </div>
+    </div>
+
+    <div class="form-group row mt-3">
+        <div class="col">
+          <input class="form-control" type="text" placeholder="URl video" formControlName="url"
+            [class.is-invalid]="nombreNoValido">
+          <small *ngIf="nombreNoValido" class="text-danger">
+            Ingrese 5 letras
+          </small>
+        </div>
+      </div>
+  </div>
+
+  <table class="table table-hover mt-3">
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Ingrediente</th>
+        <th>Borrar</th>
+      </tr>
+    </thead>
+    <tbody formArrayName="ingredientes">
+      <tr *ngFor="let control of ingredientes.controls; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>
+          <input type="text" class="form-control" [formControlName]="i">
+        </td>
+        <td>
+          <button class="btn btn-danger" (click)="borrarIngrediente(i)">
+            Borrar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button class="btn btn-primary mt-3 btn-block" type="button" (click)="agregarIngrediente()">
+    + Agregar
+  </button>
+
+  <div>
+    <div class="form-group row mt-3">
+      <div class="col form-floating">
+        <textarea id="nutricion" style="height: 100px" placeholder="Información nutricional" class="form-control"
+          formControlName="nutricion"></textarea>
+        <label for="nutricion" class="ms-3">Información nutricional</label>
+      </div>
+    </div>
+
+    <div class="form-group row mt-3">
+      <div class="col form-floating">
+        <editor formControlName="preparacion" [init]="{
+            height: 500,
+            menubar: false,
+            plugins: [
+              'advlist autolink lists link image charmap print preview anchor',
+              'searchreplace visualblocks code fullscreen',
+              'insertdatetime media table paste code help wordcount'
+            ],
+            toolbar:
+              'undo redo | formatselect | bold italic backcolor | \
+              alignleft aligncenter alignright alignjustify | \
+              bullist numlist outdent indent | removeformat | help'
+          }">
+           </editor>
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- TinyMCE -->
+
+</form>

@@ -1,0 +1,19 @@
+<div class="d-flex flex-column" *ngIf="usuario">
+  <div class="d-flex flex-md-row flex-column">
+    <div>
+      <img class="img-fluid" src="../../../assets/perfil.png" alt="">
+    </div>
+    <div class="d-flex flex-column justify-content-center">
+      <h1>{{usuario.nombre}} {{usuario.apellidos}}</h1>
+      <h2>{{usuario.alias}}</h2>
+      <h2>{{usuario.email}}</h2>
+    </div>
+  </div>
+  <div class="cont-info">
+    <app-alert [mensaje]="getMensaje(' no tiene redes sociales')"></app-alert>
+    <p>
+    </p>
+    <app-alert *ngIf="usuario.descripcion == null" [mensaje]="getMensaje(' no tiene una descripcion')"></app-alert>
+    <p *ngIf="usuario.descripcion != null">{{usuario.descripcion}}</p>
+  </div>
+</div>
